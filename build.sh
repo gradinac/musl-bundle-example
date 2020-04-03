@@ -45,9 +45,10 @@ echo "Building zlib."
 make libz.a && make install
 cd ..
 
-# There are two ways to obtain libc++.a:
+# There are multiple ways to obtain libc++.a:
 #   - compile gcc and rip it from the resulting artifacts
 #   - use libc++.a from alpine's gcc
+#   - obtain from source packages. ( E.G. libstdc++-9-dev ) 
 # We will take the second approach here.
 
 cp /usr/lib/libstdc++.a "${BUNDLE_DIR}/lib"
