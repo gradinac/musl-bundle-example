@@ -45,9 +45,13 @@ echo "Building zlib."
 make libz.a && make install
 cd ..
 
-# There are two ways to obtain libc++.a:
+# There are multiple ways to obtain libc++.a:
 #   - compile gcc and rip it from the resulting artifacts
 #   - use libc++.a from alpine's gcc
+#   - obtain from your distribution's source packages. ( E.G. libstdc++-9-dev on Debian )
+# Note: while the third approach may work for most distributions, it may result in errors for some.
+# For more information, see https://www.musl-libc.org/faq.html, section 'How do I use the musl-gcc wrapper?'
+#
 # We will take the second approach here.
 
 cp /usr/lib/libstdc++.a "${BUNDLE_DIR}/lib"
